@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DailyTaskManager</string>
+    <string name="DateLabel">Date</string>
+    <string name="TimeLabel">Time</string>
+    <string name="TaskLabel">Task</string>
+    <string name="TaskHint">Task</string>
+    <string name="TaskDescriptionLabel">Task Description</string>
+    <string name="TaskDescriptionHint">Task description</string>
+    <string name="TagLabel">Tag</string>
+    <string name="TagHint">Tags</string>
+    <string name="StartTaskButton">Start Task</string>
+</resources>
