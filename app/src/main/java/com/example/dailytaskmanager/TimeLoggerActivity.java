@@ -2,7 +2,9 @@ package com.example.dailytaskmanager;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import android.view.View;
 import android.widget.DatePicker;
@@ -16,7 +18,9 @@ public class TimeLoggerActivity extends AppCompatActivity implements View.OnClic
 
     ImageButton btnDatePicker, btnTimePicker;
     EditText dateText, timeText;
-    private int mYear, mMonth, mDay, mHour, mMinute;
+    LocalDateTime currentDateTime;
+    LocalDate today;
+    LocalTime time_now;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +35,12 @@ public class TimeLoggerActivity extends AppCompatActivity implements View.OnClic
         dateText.setEnabled(false);
         timeText.setEnabled(false);
 
-        Calendar c = Calendar.getInstance();
-        dateText.setText(c.get(Calendar.DAY_OF_MONTH) +"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.YEAR));
-        timeText.setText(c.get(Calendar.HOUR_OF_DAY) + ":" + c.get(Calendar.MINUTE));
+        currentDateTime = LocalDateTime.now();
+        today = currentDateTime.toLocalDate();
+        time_now = currentDateTime.toLocalTime();
+
+        dateText.setText(today.getDayOfMonth()+"-"+today.getMonthValue()+"-"+today.getYear());
+        timeText.setText(time_now.getHour()+":"+time_now.getMinute());
 
         btnTimePicker.setOnClickListener(this);
         btnDatePicker.setOnClickListener(this);
@@ -43,30 +50,21 @@ public class TimeLoggerActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v)
     {
         if(v == btnDatePicker) {
-            final Calendar c = Calendar.getInstance();
-            mDay = c.get(Calendar.DAY_OF_MONTH);
-            mMonth = c.get(Calendar.MONTH);
-            mYear = c.get(Calendar.YEAR);
-
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                     dateText.setText(dayOfMonth + "-"+month+"-"+year);
                 }
-            },mYear,mMonth,mDay);
+            },today.getYear(),today.getMonthValue(),today.getDayOfMonth());
             datePickerDialog.show();
 
         } else if (v == btnTimePicker) {
-            final Calendar c = Calendar.getInstance();
-            mHour = c.get(Calendar.HOUR_OF_DAY);
-            mMinute = c.get(Calendar.MINUTE);
-
             TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
                 @Override
                 public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                     timeText.setText(hourOfDay + ":" + minute);
                 }
-            },mHour,mMinute,false);
+            },time_now.getHour(),time_now.getMinute(),false);
             timePickerDialog.show();
         }
     }
