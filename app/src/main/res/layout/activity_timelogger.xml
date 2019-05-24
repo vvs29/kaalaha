@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimeLoggerActivity">
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimeLoggerActivity">
+
+    <LinearLayout
+        android:layout_width="379dp"
+        android:layout_height="699dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <EditText
+            android:id="@+id/timeLoggerTaskId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_bordered_button"
+            android:ems="10"
+            android:hint="@string/Task"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="29dp" />
+
+        <EditText
+            android:id="@+id/timeLoggerTaskDescId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="3"
+            android:background="@drawable/round_bordered_button"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/TaskDescription"
+            android:inputType="textMultiLine"
+            android:password="true"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="97dp" />
+
+        <EditText
+            android:id="@+id/timeLoggerTagId"
+            android:layout_width="match_parent"
+            android:layout_height="164dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="4"
+            android:background="@drawable/round_bordered_button"
+            android:ems="10"
+            android:hint="@string/Tags"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="178dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="83dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round_bordered_button">
+
+            <EditText
+                android:id="@+id/timeLoggerDateDisplayId"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/round_bordered_button"
+                android:ems="10"
+                android:enabled="true"
+                android:inputType="time"
+                tools:layout_editor_absoluteX="186dp"
+                tools:layout_editor_absoluteY="310dp" />
+
+            <ImageButton
+                android:id="@+id/timeLoggerDateButtonId"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/calendar_black"
+                tools:layout_editor_absoluteX="293dp"
+                tools:layout_editor_absoluteY="296dp" />
+
+            <EditText
+                android:id="@+id/timeLoggerTimeDisplayId"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/round_bordered_button"
+                android:ems="10"
+                android:inputType="date"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="321dp" />
+
+            <ImageButton
+                android:id="@+id/timeLoggerTimeButtonId"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/time_black"
+                tools:layout_editor_absoluteX="112dp"
+                tools:layout_editor_absoluteY="296dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/timeLoggerStartTaskButtonId"
+            android:layout_width="118dp"
+            android:layout_height="53dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/round_bordered_button"
+            android:text="@string/StartTaskButton"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="606dp" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
+</ScrollView>

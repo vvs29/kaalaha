@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">kaalaha</string>
+    <string name="Task">Task Summary</string>
+    <string name="TaskDescription">Task Description</string>
+    <string name="Tags">Tags</string>
+    <string name="StartTaskButton">Start Task</string>
+</resources>
