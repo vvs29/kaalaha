@@ -83,13 +83,8 @@
 
         <Button
             android:id="@+id/timeLoggerStartTaskButtonId"
-            android:layout_width="118dp"
-            android:layout_height="53dp"
+            style="@style/buttonStyle"
             android:layout_weight="1"
-            android:layout_gravity="center"
-            android:background="@drawable/round_bordered_button"
-            android:text="@string/StartTaskButton"
-            tools:layout_editor_absoluteX="147dp"
-            tools:layout_editor_absoluteY="606dp" />
+            android:text="@string/StartTaskButton"/>
     </LinearLayout>
 </ScrollView>
